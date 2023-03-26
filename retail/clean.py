@@ -46,10 +46,10 @@ class Cleaner:
 def cli(input_file, output_file):
     cleaner = Cleaner(input_file)
     click.echo("Reading input file...")
-    time.sleep(1)  # Simulate searching animation
+    time.sleep(1)
     cleaner.start()
     click.echo("Processing data...")
-    time.sleep(1)  # Simulate progress bar
+    time.sleep(1)
     cleaner.to_xlsx(output_file)
     click.echo("Done!")
     click.echo("Output file: {}".format(cleaner.output_path))
