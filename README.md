@@ -1,1 +1,1 @@
-# price-forcast-tui
+# price-forcasting
