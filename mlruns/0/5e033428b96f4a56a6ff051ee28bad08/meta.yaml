@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/elliot/Desktop/Akki/FinalProject/kisaanmitra/mlruns/0/5e033428b96f4a56a6ff051ee28bad08/artifacts
+end_time: 1677267230601
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5e033428b96f4a56a6ff051ee28bad08
+run_name: wise-worm-744
+run_uuid: 5e033428b96f4a56a6ff051ee28bad08
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677267122960
+status: 3
+tags: []
+user_id: somitragupta

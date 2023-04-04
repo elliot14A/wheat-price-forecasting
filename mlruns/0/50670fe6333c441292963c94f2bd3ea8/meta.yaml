@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/elliot/Desktop/Akki/FinalProject/kisaanmitra/mlruns/0/50670fe6333c441292963c94f2bd3ea8/artifacts
+end_time: 1677357604616
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 50670fe6333c441292963c94f2bd3ea8
+run_name: dapper-lark-872
+run_uuid: 50670fe6333c441292963c94f2bd3ea8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677357455011
+status: 3
+tags: []
+user_id: somitragupta

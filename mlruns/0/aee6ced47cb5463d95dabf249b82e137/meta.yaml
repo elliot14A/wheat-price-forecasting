@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/elliot/Desktop/Akki/FinalProject/kisaanmitra/mlruns/0/aee6ced47cb5463d95dabf249b82e137/artifacts
+end_time: 1680530905535
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: aee6ced47cb5463d95dabf249b82e137
+run_name: nosy-quail-491
+run_uuid: aee6ced47cb5463d95dabf249b82e137
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1680530838767
+status: 3
+tags: []
+user_id: elliot

@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/elliot/Desktop/Akki/FinalProject/kisaanmitra/mlruns/0/46258876af3c452ea29c576300c22c93/artifacts
+end_time: 1677266895007
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 46258876af3c452ea29c576300c22c93
+run_name: capricious-hawk-840
+run_uuid: 46258876af3c452ea29c576300c22c93
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677266770115
+status: 3
+tags: []
+user_id: somitragupta

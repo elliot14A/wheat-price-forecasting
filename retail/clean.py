@@ -1,62 +1,39 @@
-import click
 import pandas as pd
-import time
-from validate import PriceValidation
+from pathlib import Path
 
+FILE_PATH = Path(__file__).resolve()
+PROJECT_DIR = FILE_PATH.parents[1]
+DATA_FOLDER = PROJECT_DIR / "raw"
+RAW_FILE_PATH = DATA_FOLDER / "Wheat1.csv"
 
-class Cleaner:
-    def __init__(self, input_path):
-        self.input_path = input_path
-        self.output_path = None
-        self.df = pd.read_csv(input_path)
+df = pd.read_csv(RAW_FILE_PATH)
 
-    def start(self):
-        self.df = self.df.melt(
-            id_vars=list(self.df.columns[:4]),
-            value_vars=list(self.df.columns[4:]),
-            var_name="date"
-        )
+# Melting operation to convert wide column to long column
+df_melt = df.melt(
+    id_vars = list(df.columns[:4]),
+    value_vars = list(df.columns[4:]),
+    var_name = "date"
+)
 
-        self.df.columns = [col.lower().strip() for col in self.df.columns]
+# convert all column headers to lower case
+df_melt.columns = [col.lower().strip() for col in df_melt.columns]
 
-        splitted_date_series = self.df["date"].str.split(" ", expand=True)
-        self.df["month"], self.df["year"] = splitted_date_series[0], splitted_date_series[1]
+# Split year and month to separate column to make distinction for future use
+splitted_date_series = df_melt["date"].str.split(" ", expand= True)
+df_melt["month"], df_melt["year"] = splitted_date_series[0], splitted_date_series[1]
 
-        self.df["unit"] = self.df["unit"].str.strip(".")
+# Clean unit column 
+df_melt["unit"] = df_melt["unit"].str.strip(".")
 
-        self.df.date = self.df.date.str.title()
-        self.df['date'] = pd.to_datetime(self.df['date'])
+#converting data column format to dd/mm/yyy
+df_melt.date = df_melt.date.str.title()
+df_melt['date'] = pd.to_datetime(df_melt['date'])
 
-        groupby_centre = (self.df.groupby('centre').count())
-        filtered_df_100 = groupby_centre[groupby_centre['value'] == 144]
-        self.centre_list_100 = filtered_df_100.index.tolist()
+# Method 1 : We have chosen the centres with 100% values. 
+# No imputation required.
+groupby_centre = (df_melt.groupby('centre').count())
+filtered_df_100 = groupby_centre[groupby_centre['value'] == 144]
+centre_list_100 = filtered_df_100.index.tolist()
 
-    def to_xlsx(self, output_path):
-        self.df = self.df[self.df['centre'].isin(self.centre_list_100)]
-        self.df.to_excel(output_path)
-        self.output_path = output_path
-
-    def validate(self):
-        PriceValidation(self.df)
-
-
-@click.command()
-@click.argument("input_file", type=click.Path(exists=True))
-@click.argument("output_file", type=click.Path())
-def cli(input_file, output_file):
-    cleaner = Cleaner(input_file)
-    click.echo("Reading input file...")
-    time.sleep(1)
-    cleaner.start()
-    click.echo("Processing data...")
-    time.sleep(1)
-    cleaner.to_xlsx(output_file)
-    click.echo("Done!")
-    click.echo("Output file: {}".format(cleaner.output_path))
-    click.echo("Validating output file...")
-    cleaner.validate()
-    click.echo("Done!")
-
-
-if __name__ == "__main__":
-    cli()
+df_final_100 = df_melt[df_melt['centre'].isin(centre_list_100)]
+df_final_100.to_excel(DATA_FOLDER / "dataset.xlsx")

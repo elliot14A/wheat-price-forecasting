@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/elliot/Desktop/Akki/FinalProject/kisaanmitra/mlruns/0/29cf24a43eb84f13940adbc1f8246b90/artifacts
+end_time: 1677383995799
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 29cf24a43eb84f13940adbc1f8246b90
+run_name: worried-shrimp-621
+run_uuid: 29cf24a43eb84f13940adbc1f8246b90
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677383893154
+status: 3
+tags: []
+user_id: somitragupta

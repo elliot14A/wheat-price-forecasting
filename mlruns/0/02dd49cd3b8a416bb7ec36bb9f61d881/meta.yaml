@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/somitragupta/Learning/fp2/mlruns/0/02dd49cd3b8a416bb7ec36bb9f61d881/artifacts
+end_time: 1677357831409
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 02dd49cd3b8a416bb7ec36bb9f61d881
+run_name: rambunctious-koi-676
+run_uuid: 02dd49cd3b8a416bb7ec36bb9f61d881
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677357659537
+status: 3
+tags: []
+user_id: somitragupta

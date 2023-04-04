@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/elliot/Desktop/Akki/FinalProject/kisaanmitra/mlruns/0/462808cbbfa74a4bb45fdaa65a6a936e/artifacts
+end_time: 1677357081156
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 462808cbbfa74a4bb45fdaa65a6a936e
+run_name: delicate-swan-867
+run_uuid: 462808cbbfa74a4bb45fdaa65a6a936e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677356989324
+status: 3
+tags: []
+user_id: somitragupta

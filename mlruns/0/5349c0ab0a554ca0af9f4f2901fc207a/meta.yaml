@@ -1,0 +1,16 @@
+artifact_uri: file:///Users/elliot/Desktop/Akki/FinalProject/kisaanmitra/mlruns/0/5349c0ab0a554ca0af9f4f2901fc207a/artifacts
+deleted_time: 1677258687361
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 5349c0ab0a554ca0af9f4f2901fc207a
+run_name: secretive-pig-109
+run_uuid: 5349c0ab0a554ca0af9f4f2901fc207a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677256456939
+status: 1
+tags: []
+user_id: somitragupta

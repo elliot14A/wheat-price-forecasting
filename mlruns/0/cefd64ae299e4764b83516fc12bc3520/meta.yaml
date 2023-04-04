@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/elliot/Desktop/Akki/FinalProject/kisaanmitra/mlruns/0/cefd64ae299e4764b83516fc12bc3520/artifacts
+end_time: 1677383707579
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: cefd64ae299e4764b83516fc12bc3520
+run_name: stately-ox-20
+run_uuid: cefd64ae299e4764b83516fc12bc3520
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677383602018
+status: 3
+tags: []
+user_id: somitragupta

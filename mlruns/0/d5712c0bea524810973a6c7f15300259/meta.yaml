@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/elliot/Desktop/Akki/FinalProject/kisaanmitra/mlruns/0/d5712c0bea524810973a6c7f15300259/artifacts
+end_time: 1680530495400
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d5712c0bea524810973a6c7f15300259
+run_name: selective-foal-464
+run_uuid: d5712c0bea524810973a6c7f15300259
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1680530437936
+status: 3
+tags: []
+user_id: elliot
