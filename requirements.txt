@@ -7,7 +7,7 @@ matplotlib
 seaborn
 nbformat
 mlflow
-sklearn
+scikit-learn
 autots
 pynecone
 streamlit==1.18.1
