@@ -17,7 +17,8 @@ st.set_page_config(page_title="wheat-price-prediction", layout="wide")
 @st.cache_data
 def load_historic_data(centre: str, variety: str):
     data = pd.read_excel(HISTORIC_DATA)
-    data_filter = data[(data["centre"] == centre) & (data["variety"] == variety)]
+    data_filter = data[(data["centre"] == centre) &
+                       (data["variety"] == variety)]
     data_filter = data_filter[["date", "value"]]
     return data_filter
 
@@ -25,7 +26,8 @@ def load_historic_data(centre: str, variety: str):
 @st.cache_data
 def load_historic_data_all_cols(centre: str, variety: str):
     data = pd.read_excel(HISTORIC_DATA)
-    data_filter = data[(data["centre"] == centre) & (data["variety"] == variety)]
+    data_filter = data[(data["centre"] == centre) &
+                       (data["variety"] == variety)]
     return data_filter
 
 
@@ -61,6 +63,7 @@ def layout_predict_wheat_price(model_id: str, centre: str, variety: str):
         x="date",
         y="value",
         range_x=["2021-01-01", "2023-04-01"],
+        range_y=[0, 50],
         labels={
             "date": "Month Year",
             "value": "Price (INR/kg)",
@@ -137,11 +140,11 @@ label = "Select a Centre"
 centre_model_mapping: Dict[str, List[str]] = {
     "Bhopal": ["564a9065bac341a28cbfedbdcc45716a", "46258876af3c452ea29c576300c22c93"],
     "Udaipur": ["5e033428b96f4a56a6ff051ee28bad08", "c55246ecd5444f68989a3f749ca71e9d"],
-    "Ranchi": ["928a1f2602a444af91c7d1e02933908a","34a4472954a1427696b8c5dfa084c622"],
+    "Ranchi": ["928a1f2602a444af91c7d1e02933908a", "34a4472954a1427696b8c5dfa084c622"],
     "Mumbai": ["b6a76880bf0648f4a6e8693bea765f57", "462808cbbfa74a4bb45fdaa65a6a936e"],
     "Hyderabad": ["f697cf3789bc4a0b9059bfcc1c817b5a", "ae0c38ae66264d36943fefe31852c0e9"],
     "Bhubneshwar": ["02dd49cd3b8a416bb7ec36bb9f61d881", "50670fe6333c441292963c94f2bd3ea8"],
-    "Patna": ["cefd64ae299e4764b83516fc12bc3520","29cf24a43eb84f13940adbc1f8246b90"]
+    "Patna": ["cefd64ae299e4764b83516fc12bc3520", "29cf24a43eb84f13940adbc1f8246b90"]
 }
 
 select_centre = st.selectbox(
@@ -154,7 +157,8 @@ select_centre = st.selectbox(
     label_visibility="visible",
 )
 
-value_month_tab, explanation_tab = st.tabs(["Predict (Monthly)", "Explanations"])
+value_month_tab, explanation_tab = st.tabs(
+    ["Predict (Monthly)", "Explanations"])
 
 with value_month_tab:
     st.title("Predict Wheat Prices")
@@ -271,7 +275,8 @@ def trendline_over_historic_chart(df):
 
 with explanation_tab:
     desi_historic_data = load_historic_data_all_cols(select_centre, "Desi")
-    kyv_historic_data = load_historic_data_all_cols(select_centre, "Kalyan HYV")
+    kyv_historic_data = load_historic_data_all_cols(
+        select_centre, "Kalyan HYV")
 
     with st.container():
 
@@ -279,7 +284,8 @@ with explanation_tab:
 
         with desi_last_6_month_col:
             last_6_month = desi_historic_data.iloc[-6:, :].copy(deep=False)
-            last_6_month["pct_change"] = last_6_month["value"].pct_change() * 100
+            last_6_month["pct_change"] = last_6_month["value"].pct_change() * \
+                100
             last_6_month["color"] = last_6_month["pct_change"].apply(
                 lambda x: "lightgreen" if x > 0 else "lightpink"
             )
@@ -292,7 +298,8 @@ with explanation_tab:
 
         with hyv_last_6_month_col:
             last_6_month = kyv_historic_data.iloc[-6:, :].copy(deep=False)
-            last_6_month["pct_change"] = last_6_month["value"].pct_change() * 100
+            last_6_month["pct_change"] = last_6_month["value"].pct_change() * \
+                100
             last_6_month["color"] = last_6_month["pct_change"].apply(
                 lambda x: "lightgreen" if x > 0 else "lightpink"
             )
@@ -348,13 +355,15 @@ with explanation_tab:
         desi_trend_col, hyv_trend_col = st.columns(2)
 
         with desi_trend_col:
-            trend_line_plot_desi = trendline_over_historic_chart(desi_historic_data)
+            trend_line_plot_desi = trendline_over_historic_chart(
+                desi_historic_data)
             st.plotly_chart(
                 trend_line_plot_desi, theme="streamlit", use_container_width=True
             )
 
         with hyv_trend_col:
-            trend_line_plot_kyv = trendline_over_historic_chart(kyv_historic_data)
+            trend_line_plot_kyv = trendline_over_historic_chart(
+                kyv_historic_data)
             st.plotly_chart(
                 trend_line_plot_kyv, theme="streamlit", use_container_width=True
             )
